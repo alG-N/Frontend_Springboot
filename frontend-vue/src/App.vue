@@ -4,9 +4,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useAuthStore } from './stores/auth'
 
 const authStore = useAuthStore()
-
 const cartCount = ref(0)
-
 const isLoggedIn = computed(() => authStore.isAuthenticated)
 const username = computed(() => authStore.user?.username)
 const isAdmin = computed(() => authStore.isAdmin)
@@ -77,11 +75,23 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -163,19 +173,7 @@ onMounted(() => {
 }
 
 main {
-  min-height: calc(100vh - 70px);
+  flex: 1;
   background: #f5f5f5;
-}
-</style>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-#app {
-  min-height: 100vh;
 }
 </style>
