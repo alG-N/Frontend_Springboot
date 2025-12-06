@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../../../frontend-vue/src/views/HomeView.vue'),
+      component: () => import('../views/HomeView.vue'),
     },
     {
       path: '/products',
@@ -17,12 +17,12 @@ const router = createRouter({
     {
       path: '/products/:id',
       name: 'product-detail',
-      component: () => import('../../../frontend-vue/src/views/ProductDetailView.vue'),
+      component: () => import('../views/ProductDetailView.vue'),
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../../../frontend-vue/src/views/LoginView.vue'),
+      component: () => import('../views/LoginView.vue'),
     },
     {
       path: '/register',
@@ -32,7 +32,7 @@ const router = createRouter({
     {
       path: '/cart',
       name: 'cart',
-      component: () => import('../../../frontend-vue/src/views/CartView.vue'),
+      component: () => import('../views/CartView.vue'),
     },
     {
       path: '/orders',
