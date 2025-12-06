@@ -35,22 +35,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="home">
+  <div class="products">
     <div class="container">
-      <div class="header">
-        <h1>Sản phẩm nổi bật</h1>
-        <RouterLink to="/products" class="btn-view-all">
-          Xem tất cả →
-        </RouterLink>
-      </div>
+      <h1>Danh sách sản phẩm</h1>
 
       <div v-if="loading" class="loading">
-        Đang tải...
+        Đang tải sản phẩm...
       </div>
 
       <div v-else class="product-grid">
         <div 
-          v-for="product in products.slice(0, 8)" 
+          v-for="product in products" 
           :key="product.id" 
           class="product-card"
           @click="viewDetail(product.id)"
@@ -74,8 +69,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.home {
+.products {
   padding: 2rem 0;
+  min-height: calc(100vh - 70px);
 }
 
 .container {
@@ -84,27 +80,10 @@ onMounted(() => {
   padding: 0 1rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.header h1 {
+h1 {
   font-size: 2rem;
   color: #333;
-}
-
-.btn-view-all {
-  color: #2196f3;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.btn-view-all:hover {
-  color: #1976d2;
+  margin-bottom: 2rem;
 }
 
 .loading {
